@@ -27,3 +27,21 @@ Control de un LED RGB direccionable (WS2812) con transiciones suaves de color.
 
 ## Notas
 - Confirmado funcionamiento del LED en GPIO 48
+
+
+## Trabajar desde casa y oficina sin conflictos
+- Cuando trabajes en casa:
+
+1. Antes de tocar nada:
+
+  git pull
+
+2. Cuando termines de trabajar:
+
+  git add .
+  git commit -m "lo que hayas hecho"
+  git push
+
+3. Cuando vuelvas a la oficina:
+
+  git pull

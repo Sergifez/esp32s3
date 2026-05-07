@@ -11,9 +11,9 @@
 // --------------------------- CAMARA  (CAMERA_MODEL_ESP32S3_EYE) --------------------------
 #define PWDN_GPIO_NUM  -1
 #define RESET_GPIO_NUM -1
-#define XCLK_GPIO_NUM  14
-#define SIOD_GPIO_NUM  1
-#define SIOC_GPIO_NUM  2
+#define XCLK_GPIO_NUM  14 // 14
+#define SIOD_GPIO_NUM  4  // 1
+#define SIOC_GPIO_NUM  5  // 2
 
 #define Y2_GPIO_NUM 11
 #define Y3_GPIO_NUM 9
@@ -160,6 +160,13 @@ void setup() {
   delay(500);
   Serial.println("SERIAL OK");
   
+  if (psramFound()) {
+    Serial.println("PSRAM detectada");
+    Serial.printf("Tamaño PSRAM: %d bytes\n", ESP.getPsramSize());
+  } else {
+    Serial.println("No hay PSRAM");
+  }
+
   led.begin();
   led.setBrightness(BRIGHTNESS);
   led.show();
